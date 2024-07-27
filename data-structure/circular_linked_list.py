@@ -78,6 +78,56 @@ class CircularLinkedList:
             else:
                 print("Position Out Of Range...")
 
+    def delete_begin(self):
+        """Delete the node at the beginning of the list.
+        This method handle the following cases:
+        - If the list is empty, it prints a message indicating the list is empty.
+        - If the list contains only one node, it removes that node and sets the `head` to none.
+        - Otherwise -the list contains multiple nodes-, traverse the list until the last node, and then
+            move/sets the `head` node to the next of the `head` nodes, and then the last node points to the `head`.
+        """
+        current = self.head
+
+        if self.head is None:
+            print("List is empty...")
+            return
+        if self.head.next == self.head:
+            print("Deleted {} ".format(self.head.data))
+            self.head = None
+        else:
+            # traverse the list until the last node
+            while current.next != self.head:
+                current = current.next
+
+            self.head = self.head.next  # move the `head` to next node
+            current.next = self.head    # last node points to the `head` node
+
+    def delete_end(self):
+        """Delete the node at the end of the list
+        This method handle the following cases:
+        - If the list is empty, it prints message indicating the list is empty.
+        - If the list contains only one node, it removes that node and sets the `head` to None.
+        - Otherwise -list contains multiple nodes-, traverse to the list until the last node, and
+            during the traversing, the `current_pointer` sets to the previous `current`, and finally,
+            the `current_pointer` sets to the last node.
+        """
+        current = self.head
+        current_pointer = self.head # previous of `current`
+
+        if not self.head:
+            print("The list is empty.")
+            return
+        if self.head.next == self.head:
+            print("Deleted {} ".format(self.head.data))
+            self.head = None
+        else:
+            # traverse the list until the last node
+            while current.next != self.head:
+                current_pointer = current   # save the previous node of current
+                current = current.next
+
+        current_pointer.next = self.head    # previous node of last node points to the `head` node
+
     def display(self) -> str:
         nodes = []
         current = self.head
@@ -97,4 +147,3 @@ class CircularLinkedList:
 
 
 circular_list = CircularLinkedList()
-
