@@ -1,10 +1,21 @@
 class Node:
+    """A class to represent a node in Circular Linked List.
+    Attributes:
+        - data(Any): The data stored in the node.
+        - next(Node): The next node in the list.
+    """
+
     def __init__(self, data):
         self.data = data
         self.next = None
 
 
 class CircularLinkedList:
+    """A class to represent a Circular Linked List.
+    Attributes:
+        - head(Node): The head/start node of the list.
+    """
+
     def __init__(self):
         self.head = None
 
