@@ -12,14 +12,13 @@ class StackList:
     def size(self) -> int:
         """Get the length of stack
         """
-
         return len(self.stack)
 
     def is_empty(self) -> bool:
         """Check the stack is empty or not, if is empty, return True and print some msg
         otherwise, return False.
         """
-        
+
         if self.size() == 0:
             print("The stack is empty...")
             return True
@@ -28,9 +27,7 @@ class StackList:
     def push(self, element: Any) -> list:
         """Add an item to the top of the stack, and then return the stack.
         """
-
         self.stack.append(element)
-        return self.stack
 
     def pop(self) -> list:
         """Remove and return the item from the top of the stack.
@@ -40,8 +37,8 @@ class StackList:
 
         if self.is_empty():
             return "Stack is empty..."
-        self.stack.pop()
-        return self.stack
+        popped = self.stack.pop()
+        print("Removed element {} in stack.".format(popped))
 
     def peek(self) -> Any:
         """Return the top item
@@ -52,6 +49,13 @@ class StackList:
         if self.is_empty():
             return "Stack is empty..."
         return self.stack[-1]
+
+    def display(self):
+        """Display the stack
+        """
+        if self.is_empty():
+            print("The stack is empty...")
+        return "Stack: {}".format(self.stack)
 
 
 stack_list = StackList()
