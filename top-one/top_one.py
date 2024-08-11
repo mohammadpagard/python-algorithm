@@ -15,14 +15,17 @@ def top_one(array: list) -> list:
     counter = {}
     max_repeat = 0
 
-    for val in array:
-        if val not in counter:
-            counter[val] = 1
-        else:
-            counter[val] += 1
-            if val not in result:
-                result.append(val)
+    try:
+        for val in array:
+            if val not in counter:
+                counter[val] = 1
+            else:
+                counter[val] += 1
+                if val not in result:
+                    result.append(val)
 
-    max_repeat = max(counter.values())
+        max_repeat = max(counter.values())
 
-    return result, max_repeat
+        return result, max_repeat
+    except ValueError:
+        return ()
