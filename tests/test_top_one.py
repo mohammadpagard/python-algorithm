@@ -1,4 +1,4 @@
-from .top_one import top_one
+from ..top_one import top_one
 
 
 class TestTopOne:
