@@ -16,7 +16,7 @@ def zigzag(array1: list[int], array2: list[int]):
     return result
 
 
-class ZigZag:
+class ZigZagQueueSolution:
     """
     Queue Data Structure
     """
@@ -34,4 +34,7 @@ class ZigZag:
         if self.queue:
             return True
         return False
-
+    
+    def display(self):
+        while self.has_next():
+            print(self.next(), end=' ')
