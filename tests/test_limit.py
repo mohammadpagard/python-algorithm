@@ -1,4 +1,4 @@
-from .limit import limit_struct
+from ..limit import limit_struct
 
 
 class TestLimit:

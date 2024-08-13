@@ -17,4 +17,3 @@ def two_sum_sorted(array: list[int], target: int) -> str:
         elif current < target:
             left += 1
     return "So, you couldn't fund your target in this list..."
-
