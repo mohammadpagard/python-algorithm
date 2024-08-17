@@ -6,10 +6,12 @@
 """
 
 def remove_min(array: list[int]) -> int:
-    min_value = 0
+    if len(array) == 0:
+        return 0
 
+    min_value = array[0]
     for value in array:
         if min_value > value:
             min_value = value
-    return min_value
 
+    return min_value
