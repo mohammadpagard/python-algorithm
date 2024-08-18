@@ -20,3 +20,5 @@ def move_zeros(array: list) -> list:
     array.extend([0] * zero)
     return array
 
+print(move_zeros([0, False, 1, 0, 1, 2, 0, 1, 3, 'python', 0]))
+
