@@ -14,3 +14,5 @@ def binary_search(array: list[int], target: int) -> str:
 
     return "Your target isn't in the array."
 
+print(binary_search([1, 2, 4, 7, 9, 12, 32, 45, 47, 64, 78, 89, 90],
+            78))
